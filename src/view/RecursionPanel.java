@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -41,6 +42,10 @@ public class RecursionPanel extends JPanel
 		this.add(factorialButton);
 		this.add(inputField);
 		this.add(displayArea);
+		displayArea.setWrapStyleWord(true);
+		displayArea.setLineWrap(true);
+		displayArea.setEditable(false);
+		this.setBackground(Color.orange);
 	}
 	
 	private void setupLayout()
@@ -64,7 +69,11 @@ public class RecursionPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				
+				String input = inputField.getText();
+				if(checkInput(input))
+				{
+					displayArea.setText(baseController.doFibonacci(input));
+				}
 			}
 		});
 		
@@ -75,5 +84,21 @@ public class RecursionPanel extends JPanel
 				
 			}
 		});
+	}
+	
+	private boolean checkInput(String input)
+	{
+		boolean isNumber = false;
+		
+		try
+		{
+			Integer.parseInt(input);
+			isNumber = true;
+		}
+		catch(Exception numberException)
+		{
+			displayArea.setText("You must type number");
+		}
+		return isNumber;
 	}
 }
