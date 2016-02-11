@@ -26,4 +26,11 @@ public class RecursionController
 		calculatedValue = "The Fibonacci sequence at " + input + " is " + Integer.toString(mathTool.fibonacciNumber(Integer.parseInt(input)));
 		return calculatedValue;
 	}
+	
+	public String doFactorial(String input)
+	{
+		calculatedValue = "The Fibonacci sequence at " + input + " is " + Integer.toString(mathTool.factorialNumber(Integer.parseInt(input)));
+		return calculatedValue;
+	}
+	
 }

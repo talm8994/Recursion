@@ -21,4 +21,21 @@ public class RecursionTool
 			return fibonacciNumber(position -1) + fibonacciNumber(position - 2);
 		}
 	}
+	public int factorialNumber(int position)
+	{
+		if(position < 0)
+		{
+			return Integer.MIN_VALUE;
+		}
+		
+		if(position == 0)
+		{
+			return 1;
+		}
+		else
+		{
+			return position * factorialNumber(position - 1);
+			
+		}
+	}
 }
