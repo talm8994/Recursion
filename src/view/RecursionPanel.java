@@ -81,7 +81,6 @@ public class RecursionPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				public void actionPerformed(ActionEvent click)
 				{
 					String input = inputField.getText();
 					if(checkInput(input))
